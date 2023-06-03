@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id='jokenpo'>
+        <option value="pedra">Pedra</option>
+        <option value="papel">Papel</option>
+        <option value="tesoura">Tesoura</option>
+    </select>
+    <button onclick="Jogar()">Jogar</button>
+   <div id="minha_jogada"></div>
+    
+</body>
+<script>
+    function Jogar(){
+        //pegando valor 
+        jogada = document.getElementById('jokenpo').value
+    
+        //Criando a jogada com a imagem
+        img = document.createElement('img')
+        img.src='papel.png'
+        img.alt='papel'
+        img.src =jogada + '.png'
+        img.alt = jogada
+        minha_jogada = document.getElementById('minha_jogada')
+        minha_jogada.innerHTML =''
+        minha_jogada.appendChild(img)
+
+        //sorteando a jogada maquina
+        maquina_jogada =Math.floor(Math.random() *3)
+        console.log(maquina_jogada)
+        jogadas_possiveis = ['pedra','papel','tesoura']
+        console.log(jogadas_possiveis[maquina_jogada])
+
+       // if(jogada == pedra && maquina_jogada==tesoura){
+        //    console.log('voce Venceu')
+       // }else if (jogada == tesoura && maquina_jogada==papel){
+        //    console.log('Voce Venceu')
+       // }else if (jogada==papel && maquina_jogada==pedra){
+        //    console.log('Voce venceu')
+        //}else(){
+       // console.log('voce PErdeu')}
+        //}
+        
+  
+</script>
+</html>
